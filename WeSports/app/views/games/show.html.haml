@@ -1,0 +1,37 @@
+-# in app/views/movies/show.html.haml
+= button_to 'Back to Games list', games_path, :method => :get, :class => 'btn btn-primary btn-back'
+
+%h3 Details about #{@game.sport_name}
+
+%div.detailsList
+  %ul
+    %li
+      Address:
+      = @game.address
+    %li
+      Zip Code:
+      = @game.zipcode
+    %li
+      Start Time:
+      = @game.game_start_time.strftime("%B %d, %Y, %I:%M %p")
+    %li
+      Slots Left Available:
+      = @game.spots_left
+    %li
+      = link_to "Open Location in Maps", @location
+
+%h3 Players Joined
+
+%div.playersList
+  %ul
+    - @players.each do |p|
+      %li= link_to "#{p.username}", player_path(p)
+
+%div.gameButtons
+  - if @game.spots_left > 0 and not @player_joined_game
+    = button_to 'Join Game', join_game_path(@game), :method => :get, :confirm => 'Are you sure to Join this Game?', :class => 'btn btn-primary btn-game'
+  - if @player_owns_game
+    = button_to 'Edit', edit_game_path(@game), :method => :get, :class => 'btn btn-primary btn-game'
+    = button_to 'Delete', game_path(@game), :method => :delete, :confirm => 'Are you sure to delete this Game?', :class => 'btn btn-primary btn-game'
+
+

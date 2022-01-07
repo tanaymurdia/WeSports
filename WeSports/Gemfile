@@ -1,0 +1,52 @@
+source 'https://rubygems.org'
+
+ruby '>=2.6.3'
+gem 'rails', '4.2.11'
+
+git_source(:github) do |repo_name|
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  "https://github.com/#{repo_name}.git"
+end
+
+gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
+
+gem 'bcrypt', '~> 3.1.7'
+gem 'omniauth'
+gem 'omniauth-rails_csrf_protection'
+gem 'omniauth-google-oauth2'
+
+# for Heroku deployment - as described in Ap. A of ELLS book
+group :development, :test do
+  gem 'byebug'
+  gem 'database_cleaner'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'rspec-rails'
+  gem 'pry'
+  gem 'pry-byebug'
+end
+
+group :test do
+  gem 'cucumber-rails', require: false
+  gem 'cucumber-rails-training-wheels'
+  gem 'simplecov', :require => false
+end
+group :production do
+  gem 'pg'
+end
+
+# Gems used only for assets and not required
+# in production environments by default.
+
+gem 'sass-rails', '~> 5.0.3'
+gem 'coffee-rails', '~> 4.1.0'
+gem 'uglifier', '>= 2.7.1'
+
+gem 'jquery-rails'
+gem 'haml'
+gem 'protected_attributes'
+
+gem 'sqlite3', '< 1.4'
+
+gem 'tzinfo-data'
+gem 'tzinfo'

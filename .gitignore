@@ -1,0 +1,13 @@
+#ignore the env file so we don't have the keys on the github
+WeSports/.env
+WeSports/tmp/*
+WeSports/log/*
+*.sqlite3
+WeSports/.bundle/*
+WeSports/.byebug_history
+WeSports/../.bundle/*
+WeSports/../.idea/*
+WeSports/coverage/.last_run.json
+WeSports/coverage/.resultset.json
+.bundle/*
+.idea/*

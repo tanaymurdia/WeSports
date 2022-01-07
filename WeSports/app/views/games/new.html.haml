@@ -1,0 +1,25 @@
+= button_to 'Back to Games list', games_path, :method => :get, :class => 'btn btn-primary btn-back'
+%h2 Create New Movie
+
+= form_tag games_path, :id => 'new_form' do
+
+  = label :game, :sport_name, 'Sport Name'
+  = text_field :game, "sport_name"
+
+  = label :game, :address, 'Address'
+  = text_field :game, "address"
+
+  = label :game, :zipcode, 'Zip Code'
+  = text_field :game, "zipcode"
+
+
+  = label :game, :slots_to_be_filled, 'Total Slots Available'
+  = number_field :game, :slots_to_be_filled, min: 1
+
+  = label :game, :game_start_time, 'Game Start Time'
+  = datetime_select :game, :game_start_time, default: 3.days.from_now, ampm: true
+  %br
+  = label :game, :game_end_time, 'Game End Time'
+  = datetime_select :game, :game_end_time, default: 3.days.from_now, ampm: true
+  %br
+  = submit_tag 'Save Changes', :class => 'btn btn-primary'

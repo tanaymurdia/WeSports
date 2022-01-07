@@ -1,0 +1,54 @@
+-#  This file is app/views/games/index.html.haml
+%div.welcome
+  %h1 Welcome #{@player.username}!
+  %h3 Games for you
+
+-# = form_tag movies_path, :method => :get, :id => 'ratings_form' do
+-#   = hidden_field_tag "title_sort", true if @title_header
+-#   = hidden_field_tag ":release_date_sort", true if @date_header
+-#   Include:
+-#   - @all_ratings.each do |rating|
+-#     = rating
+-#     = check_box_tag "ratings[#{rating}]", 1, @selected_ratings.include?(rating), :id => "ratings_#{rating}"
+-#   = submit_tag 'Refresh', :id => 'ratings_submit', :class => 'btn btn-primary'
+
+%div.filter
+  = form_tag games_path, :method => :get, :id => 'available_form' do
+    Only available games:
+    = check_box_tag :only_available, 1, @available, :id => "only_available"
+    = submit_tag 'Refresh', :id => 'is_available_submit', :class => 'btn btn-primary btn-info'
+
+  = form_tag(games_path, :method => "get") do
+    #search-bar.input-group
+      = search_field_tag :name_search, params[:name_search], placeholder: "Enter a Sport", :id => "search-name-bar"
+      #search-button.input-group-btn
+        = button_tag "Name Filter", :class => 'btn btn-info', :name => nil
+
+  = form_tag(games_path, :method => "get") do
+    #search-bar.input-group
+      = search_field_tag :zip_search, params[:zip_search], placeholder: "Enter a Zipcode", :id => "search-zipcode-bar"
+      #search-button.input-group-btn
+        = button_tag "Zip Filter", :class => 'btn btn-info', :name => nil
+
+%table#games.table.table-striped.col-md-12
+  %thead
+    %tr
+      %th{:class => @name_header}= link_to 'Sport Name', games_path(:sort => 'name', :name_search => @name, :zip_search => @zip, :only_available => @available), :id => 'name_header'
+      %th Zip Code
+      %th{:class => @start_header}= link_to 'Start Time', games_path(:sort => 'start', :name_search => @name, :zip_search => @zip, :only_available => @available), :id => 'start_header'
+      %th End Time
+      %th Slots Available
+      %th Game Info
+  %tbody
+    - @games.each do |game|
+      %tr
+        %td= game.sport_name
+        %td= game.zipcode
+        %td= game.game_start_time
+        %td= game.game_end_time
+        %td= game.spots_left
+        %td= link_to "More about #{game.sport_name}", game_path(game)
+
+= button_to 'Add new game', new_game_path, method: :get, :class => "btn btn-info"
+
+= button_to 'Profile Page', player_path(@player), method: :get, :class => "btn btn-info"

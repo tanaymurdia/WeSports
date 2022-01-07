@@ -1,0 +1,26 @@
+-# edit.html.haml using partial
+= button_to 'Back to Games list', games_path, :method => :get, :class => 'btn btn-primary btn-back'
+
+%h2 Edit Existing Game
+
+= form_tag game_path(@game), :method => :put, :id => 'edit_form' do
+
+  = label :game, :sport_name, 'Sport Name'
+  = text_field :game, "sport_name", placeholder: @game.sport_name
+
+  = label :game, :address, 'Address'
+  = text_field :game, "address", placeholder: @game.address
+
+  = label :game, :zipcode, 'Zip Code'
+  = text_field :game, "zipcode", placeholder: @game.zipcode
+
+  = label :game, :slots_to_be_filled, 'Total Slots Available'
+  = number_field :game, :slots_to_be_filled, min: 1, placeholder: @game.slots_to_be_filled
+
+  = label :game, :game_start_time, 'Game Start Time'
+  = datetime_select :game, :game_start_time, default: @game.game_start_time, ampm: true
+  %br
+  = label :game, :game_end_time, 'Game End Time'
+  = datetime_select :game, :game_end_time, default: @game.game_end_time, ampm: true
+  %br
+  = submit_tag 'Update Game Info', :class => 'btn btn-primary'

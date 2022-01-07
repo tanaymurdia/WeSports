@@ -1,0 +1,279 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  /*background: url(./WeSports_background_2.jpg);
+  background-size:90% auto-flow;*/
+  background-color:black;
+  color: white;
+}
+
+
+
+div .navbar {
+    background-color: #e73725 !important;
+}
+
+div .input-group {
+    align-items: center !important;
+    margin: 2px !important;
+    width: 30%;
+    inline-size: auto;
+}
+
+div .welcome {
+    padding-bottom: 10px;
+}
+
+
+.form-control {
+    width:30%;
+}
+
+@media (min-width: 1200px) {
+    .container{
+        max-width: inherit;
+        padding: 0px;
+    }
+}
+
+#main {
+    padding: 15px;
+    background-size: 100% 100% ;
+}
+
+.welcomeMessage {
+    padding-bottom:30px;
+}
+
+.btn {
+    background-color: #e73725 !important;
+    border-color: #e73725 !important;
+    margin: 2px;
+    width:200px;
+}
+
+.btn-back {
+    margin-bottom: 10px;
+}
+
+.filter {
+    margin-bottom: 10px; 
+}
+
+.btn-game {
+    display:inline;
+}
+
+.gameButtons {
+    position:relative;
+    display: -webkit-inline-box;
+    margin-top:30px;
+}
+
+#access {
+  margin-bottom: 5px; 
+}
+
+#login {
+    padding-top: 30px;
+    text-align: center;
+}
+
+#available_form {
+    padding-left: 10px;
+}
+
+form#edit_form input{
+    border-radius:5px;
+    display: flow-root;
+    margin-left: 12pc;
+    padding:4px 2px;
+    margin-top:10px
+}
+form#edit_form label {
+    text-align: right;
+    clear: both;
+    float:left;
+    padding-left: 10px;
+    margin-right:15px;
+    margin-top: 9px
+}
+form#edit_form {
+    margin-left:40px
+}
+
+form#edit_form select#game_game_start_time_1i{
+    margin-left: 50px;
+}
+form#edit_form select#game_game_end_time_1i{
+    margin-left: 55px;
+}
+
+form#edit_form select {
+    border-radius:5px;
+    margin-top:10px;
+    padding:4px 2px;
+}
+form#edit_form label{
+    margin-top:10px;
+}
+
+
+input#search-name-bar{
+    width:200px;
+    border: 1px solid #ced4da;
+    border-radius:5px;
+    padding: 4px 10px;
+    margin: 0px 4px;
+    margin-top: 4px;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+input#search-zipcode-bar{
+    width:200px;
+    border: 1px solid #ced4da;;
+    border-radius:5px;
+    padding: 4px 10px;
+    margin: 0px 4px;
+    margin-top: 4px;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+input#is_available_submit{
+    margin-left:25px;
+}
+input#only_available{
+    margin-left:5px;
+    margin-top:5px;
+    color: red;
+}
+
+.btn-info {
+    width:150px;
+    padding: 4px 10px;
+    margin: 0px 4px;
+    margin-top: 5px;
+    margin-bottom: 2px;
+}
+
+
+.button {
+    color: #444444;
+    background: #F3F3F3;
+    border: 1px #DADADA solid;
+    padding: 5px 10px;
+    border-radius: 2px;
+    font-weight: bold;
+    font-size: 9pt;
+    outline: none;
+    height: 50px;
+}
+
+.button:hover {
+    border: 1px #C6C6C6 solid;
+    box-shadow: 1px 1px 1px #EAEAEA;
+    color: #333333;
+    background: #F7F7F7;
+}
+
+.button:active {
+    box-shadow: inset 1px 1px 1px #DFDFDF;   
+}
+
+/* Blue button as seen on translate.google.com*/
+.blue {
+    color: white;
+    background: #4C8FFB;
+    border: 1px #3079ED solid;
+    box-shadow: inset 0 1px 0 #80B0FB;
+}
+
+.blue:hover {
+    border: 1px #2F5BB7 solid;
+    box-shadow: 0 1px 1px #EAEAEA, inset 0 1px 0 #5A94F1;
+    background: #3F83F1;
+}
+
+.blue:active {
+    box-shadow: inset 0 2px 5px #2370FE;   
+}
+
+form#new_form input{
+    border-radius:5px;
+    display: flow-root;
+    margin-left: 12pc;
+    padding:4px 2px;
+    margin-top:10px
+}
+form#new_form label {
+    text-align: right;
+    clear: both;
+    float:left;
+    padding-left: 10px;
+    margin-right:15px;
+    margin-top: 9px
+}
+form#new_form {
+    margin-left:40px
+}
+
+form#new_form select#game_game_start_time_1i{
+    margin-left: 50px;
+}
+form#new_form select#game_game_end_time_1i{
+    margin-left: 55px;
+}
+
+form#new_form label{
+    margin-top:10px;
+}
+
+form#new_form select {
+    border-radius:5px;
+    margin-top:10px;
+    padding:4px 2px;
+}
+ul {
+  list-style: none; 
+}
+ul li::before {
+  content: "\2022";  
+  color: red; 
+  font-weight: bold; 
+  display: inline-block; 
+  width: 10px; 
+  margin-left: -1em; 
+}
+
+a:link {
+  color: red;
+}
+
+a:visited {
+  color: red;
+}
+
+a:hover {
+  color: red;
+}
+
+a:active {
+  color: red;
+}
