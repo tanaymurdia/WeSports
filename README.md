@@ -1,15 +1,5 @@
 # WeSports
 
-## <b>Members</b></br>
-Member 1 Name: Jenny Martinez</br>
-Member 1 UNI: jm4607</br>
-Member 2 Name: Stephane Meunier</br>
-Member 2 UNI: sjm2264</br>
-Member 3 Name: Samuel Raab</br>
-Member 3 UNI: smr2218</br>
-Member 4 Name: Tanay Murdia</br>
-Member 4 UNI: tm3149</br>
-
 ## Run program locally
 1. bundle install --without production
 2. rake db:migrate
@@ -21,7 +11,7 @@ Member 4 UNI: tm3149</br>
 https://wesports-app.herokuapp.com/
 
 ## Github
-https://github.com/raabsm/WeSports
+https://github.com/tanaymurdia/WeSports
 
 ## Pages </br>
 ### Login </br>
